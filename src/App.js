@@ -5,18 +5,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "Hello"
+      text: ""
     };
   }
 
   componentDidMount() {
-    // fetch("/hello")
-    //   .then(res => res.text())
-    //   .then(data => {
-    //     this.setState({
-    //       text: data
-    //     });
-    //   });
+    fetch("/hello")
+      .then(res => res.text())
+      .then(data => {
+        this.setState({
+          text: data
+        });
+      });
   }
 
   render() {
